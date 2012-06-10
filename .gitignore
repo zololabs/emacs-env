@@ -5,3 +5,4 @@ starter-kit-2.*
 /backups
 /places
 /.smex-items
+/auto-save-list/*.local~
