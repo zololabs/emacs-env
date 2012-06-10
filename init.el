@@ -17,7 +17,8 @@
 	clojure-mode clojure-test-mode
         rainbow-delimiters
         ac-slime
-	markdown-mode ))
+	markdown-mode
+        maxframe))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
@@ -44,5 +45,6 @@
 
 (set-default-font "-apple-Monaco-medium-normal-normal-*-14-*-*-*-m-0-iso10646-1")
 
-;;; Enabling Clojure Test Mode
+;;; Maximize Frame
+(maximize-frame)
 
