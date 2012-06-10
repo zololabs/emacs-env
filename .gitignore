@@ -4,3 +4,4 @@ starter-kit-2.*
 *.tar
 /backups
 /places
+/.smex-items
