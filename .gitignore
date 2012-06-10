@@ -2,3 +2,5 @@
 .DS_Store
 starter-kit-2.*
 *.tar
+/backups
+/places
