@@ -1,18 +1,18 @@
 
 ;; ----- smex-history -----
 (
+ rgrep
+ package-list-packages
  set-default-font
  scroll-bar-set-window-start
  magit-status
  make-directory
- package-list-packages
  load-theme
- package-install
 )
 
 ;; ----- smex-data -----
 (
- (package-list-packages . 3)
+ (package-list-packages . 4)
  (package-install . 2)
  (make-directory . 2)
  (load-theme . 14)
@@ -21,4 +21,5 @@
  (magit-status . 1)
  (scroll-bar-set-window-start . 1)
  (set-default-font . 1)
+ (rgrep . 1)
 )
