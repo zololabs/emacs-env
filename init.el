@@ -38,8 +38,10 @@
 
 ;;; Color Themes
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/twilight")
 
-(load-theme 'wombat t)
+;; Enable the following theme:
+(load-theme 'twilight t)
 
 ;;; Font Size
 
@@ -47,4 +49,3 @@
 
 ;;; Maximize Frame
 (maximize-frame)
-
