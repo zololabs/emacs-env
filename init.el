@@ -20,6 +20,7 @@
         rainbow-delimiters
         ac-slime
 	markdown-mode
+        popup
         maxframe))
 
 (dolist (p my-packages)
@@ -40,8 +41,10 @@
 
 ;;; Color Themes
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/twilight")
 
-(load-theme 'wombat t)
+;; Enable the following theme:
+(load-theme 'twilight t)
 
 ;;; Font Size
 
@@ -53,3 +56,25 @@
 (menu-bar-mode)
 (load-file (concat *EMACS-ENV* "/init_emacs.el"))
 (load-file (concat *EMACS-ENV* "/key_bindings.el"))
+
+;;; ElDoc Mode
+(add-hook 'clojure-mode-hook 'eldoc-mode)
+
+;;; Auto Complete
+(add-to-list 'load-path "~/.emacs.d/elpa/auto-complete/")
+(require 'auto-complete-config)
+(ac-config-default)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes (quote ("0c8ffb272e65e2ffc49b0d5755d7db137931c5e3ed47890d7a6de07717eaa2e8" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
