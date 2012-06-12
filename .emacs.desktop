@@ -1,0 +1,40 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Mon Jun 11 20:40:14 2012
+;; Desktop file format version 206
+;; Emacs version 24.1.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring '("moni" "layout" ";"))
+(setq register-alist nil)
+(setq file-name-history '("~/.emacs.d/" "/Users/amit/.emacs.d/init_emacs.el"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/Users/amit/.emacs.d/init_emacs.el"
+  "init_emacs.el"
+  'emacs-lisp-mode
+  '(auto-fill-mode rainbow-delimiters-mode paredit-mode elisp-slime-nav-mode eldoc-mode hi-lock-mode)
+  2481
+  '(2480 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix) (column-number-mode . t)))
+
+(desktop-create-buffer 206
+  "/Users/amit/.emacs.d/init.el"
+  "init.el"
+  'emacs-lisp-mode
+  '(auto-fill-mode rainbow-delimiters-mode paredit-mode elisp-slime-nav-mode eldoc-mode hi-lock-mode)
+  1452
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix) (column-number-mode . t)))
+

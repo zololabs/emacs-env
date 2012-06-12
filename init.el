@@ -1,3 +1,5 @@
+(setq *EMACS-ENV* "~/.emacs.d")
+
 ;; Add Marmalade package archive for Emacs starter kit and other Emacs packages
 
 (require 'package)
@@ -48,3 +50,6 @@
 ;;; Maximize Frame
 (maximize-frame)
 
+(menu-bar-mode)
+(load-file (concat *EMACS-ENV* "/init_emacs.el"))
+(load-file (concat *EMACS-ENV* "/key_bindings.el"))
