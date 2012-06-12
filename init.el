@@ -18,6 +18,7 @@
         rainbow-delimiters
         ac-slime
 	markdown-mode
+        popup
         maxframe))
 
 (dolist (p my-packages)
@@ -49,6 +50,14 @@
 
 ;;; Maximize Frame
 (maximize-frame)
+
+;;; ElDoc Mode
+(add-hook 'clojure-mode-hook 'eldoc-mode)
+
+;;; Auto Complete
+(add-to-list 'load-path "~/.emacs.d/elpa/auto-complete/")
+(require 'auto-complete-config)
+(ac-config-default)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
