@@ -1,3 +1,5 @@
+history
+*.dat
 ~*
 *elc
 .DS_Store

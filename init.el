@@ -44,9 +44,6 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/twilight")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
 
-;; Enable the following theme:
-(load-theme 'solarized-dark t)
-
 ;;; Font Size
 
 (set-default-font "-apple-Monaco-medium-normal-normal-*-14-*-*-*-m-0-iso10646-1")
@@ -65,6 +62,8 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/auto-complete/")
 (require 'auto-complete-config)
 (ac-config-default)
+
+(load-file (concat *EMACS-ENV* "/user_setup.el"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
