@@ -508,7 +508,7 @@ elements of a def* forms."
         "assert-predicate" "compose-fixtures" "deftest" "deftest-" "file-position"
         "function?" "get-possibly-unbound-var" "inc-report-counter" "is" "join-fixtures"
         "report" "run-all-tests" "run-tests" "set-test" "successful?"
-        "test-all-vars" "test-ns" "test-var" "testing" "demonic-testing" "testing-contexts-str"
+        "test-all-vars" "test-ns" "test-var" "testing" "demonic-testing" "stubbing" "mocking" "testing-contexts-str"
         "testing-vars-str" "try-expr" "use-fixtures" "with-test" "with-test-out"
         ;; clojure.walk
         "keywordize-keys" "macroexpand-all" "postwalk" "postwalk-demo" "postwalk-replace"
@@ -784,8 +784,12 @@ use (put-clojure-indent 'some-symbol 'defun)."
 
   ;; clojure.test
   (testing 1)
-  (demonic-testing 1)
   (deftest 'defun)
+
+  ;; Zolo Specific One
+  (demonic-testing 1)
+  (stubbing 1)
+  (mocking 1)
 
   ;; contrib
   (handler-case 1)
