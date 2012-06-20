@@ -10,3 +10,4 @@ starter-kit-2.*
 /.smex-items
 /auto-save-list/*.local~
 /url/cookies
+/user_setup.el
