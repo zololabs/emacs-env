@@ -329,6 +329,7 @@ elements of a def* forms."
                               "defmulti" "defmethod" "defmacro"
                               "defstruct" "deftype" "defprotocol"
                               "defrecord" "deftest"
+                              "demonictest"
                               "slice" "def\\[a-z\\]"
                               "defalias" "defhinted" "defmacro-"
                               "defn-memo" "defnk" "defonce-"
@@ -787,7 +788,7 @@ use (put-clojure-indent 'some-symbol 'defun)."
   (deftest 'defun)
 
   ;; Zolo Specific One
-  (demonictest 1)
+  (demonictest 'defun)
   (demonic-testing 1)
   (stubbing 1)
   (mocking 1)
