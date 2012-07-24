@@ -80,3 +80,21 @@
  ;; If there is more than one, they won't work right.
  )
 
+(defun my-clojure-mode-hook ()
+  (setq indent-tabs-mode nil)
+  (push `("\\(demonictest\\|sivatest\\)[ \r\n\t]*\\(\\sw+\\)?"
+          (1 font-lock-keyword-face)
+          (2 font-lock-function-name-face nil t))
+        clojure-font-lock-keywords)
+  (dolist (x '((case . 1)
+               (condp . 2)
+               (are . let)
+               (doto . defn)))
+    (put (car x)
+         'clojure-indent-function
+         (if (numberp (cdr x))
+             (cdr x)
+           (get (cdr x) 'clojure-indent-function))))
+  (clojure-test-mode))
+
+(add-hook 'clojure-mode-hook 'my-clojure-mode-hook)
