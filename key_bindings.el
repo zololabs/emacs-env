@@ -3,8 +3,8 @@
 (define-key global-map [(control \')] 'uncomment-region)
 
 ;; slime
-(define-key global-map [(control z)] 'slime-eval-buffer) 
-(global-set-key (kbd "C-c r") 'slime-restart-inferior-lisp) 
+(define-key global-map [(control z)] 'nrepl-eval-buffer) 
+(global-set-key (kbd "C-c r") 'nrepl-restart) 
 
 ;; truncating lines
 ;; (define-key global-map [(control \;)(m)(t)] 'toggle-truncate-lines)

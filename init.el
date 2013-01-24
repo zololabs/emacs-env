@@ -15,24 +15,28 @@
 (when (not package-archive-contents)
  	(package-refresh-contents))
 
-(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-eshell starter-kit-bindings
-	clojure-mode clojure-test-mode
-        rainbow-delimiters
-        ac-slime
-	markdown-mode
-        popup
-        maxframe))
+(defvar my-packages '(starter-kit
+                      starter-kit-lisp
+                      starter-kit-eshell
+                      starter-kit-bindings
+                      clojure-mode
+                      clojure-test-mode
+                      rainbow-delimiters
+                      ac-slime
+                      markdown-mode
+                      popup
+                      maxframe
+                      auto-complete
+                      nrepl
+                      ac-nrepl
+                      fuzzy))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 
 ;; Useful global settings as Emacs is used predominantely for Clojure development
-
-;; Launch the Clojure repl via Leiningen - M-x clojure-jack-in 
-;; Global shortcut definition to fire up clojure repl and connect to it
-
-(global-set-key (kbd "C-c C-j") 'clojure-jack-in)
+(global-set-key (kbd "C-c C-j") 'nrepl-jack-in)
 
 
 ;; Colour mach parens and other structure characters to make code easy to follow
@@ -98,3 +102,20 @@
   (clojure-test-mode))
 
 (add-hook 'clojure-mode-hook 'my-clojure-mode-hook)
+
+
+;;nrepl autocomplete
+(require 'ac-nrepl)
+(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
+(add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
+(eval-after-load "auto-complete"
+  '(add-to-list 'ac-modes 'nrepl-mode))
+
+(defun set-auto-complete-as-completion-at-point-function ()
+  (setq completion-at-point-functions '(auto-complete)))
+(add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
+
+(add-hook 'nrepl-mode-hook 'set-auto-complete-as-completion-at-point-function)
+(add-hook 'nrepl-interaction-mode-hook 'set-auto-complete-as-completion-at-point-function)
+
+(define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc)
