@@ -127,3 +127,13 @@
 (add-hook 'isearch-mode-hook 'my-isearch-yank-word-hook)
 
 (global-set-key (kbd "C-x *") 'my-isearch-word-at-point)
+
+(setq debug-on-error t)
+
+(defcustom nrepl-history-file "~/.nrepl_history"
+  "File to save the persistent REPL history to."
+  :type 'string
+  :safe 'stringp
+  :group 'nrepl-mode)
+
+
